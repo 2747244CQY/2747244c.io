@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+*, *::after, *::before {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Raleway', Arial, sans-serif; }
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#menu {
+  font-family:  'Raleway', Arial, sans-serif;
+  position: absolute;
+  padding: 8px;
+  color: white;
+  background-color:rgba(20,100,20,0.45);
+  box-shadow:10px 5px 5px #3D5A59;}
+}
+
+.section {
+  text-align: left;
+  height: 100%;
+  margin: 0 auto;
+  padding: 6em 0; }
+  .section__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 1.5em; }
+
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin: 0 10px; }
+  .toggle-button label {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: left; }
+  .toggle-button input {
+    display: none; }
+  .toggle-button__icon {
+    cursor: pointer;
+    pointer-events: none; }
+    .toggle-button__icon:before, .toggle-button__icon:after {
+      content: "";
+      position: absolute;
+      transition: 0.2s ease-out; }
+
+
+.toggle-button--tuli {
+  display: block;
+  width: 160px;
+  margin: 0 auto 10px auto; }
+  .toggle-button--tuli label {
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    transition: all 0.2s; }
+    .toggle-button--tuli label:before, .toggle-button--tuli label:after {
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 1100px;
+      transition: all 0.2s .1s ease-out; }
+    .toggle-button--tuli label:before {
+      content: attr(data-text); }
+  .toggle-button--tuli input:checked ~ .toggle-button__icon:after {
+    transform: translate(0, 0);
+    animation: slideLeft .2s; }
+  .toggle-button--tuli .toggle-button__icon {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    border-radius: 50%; }
+    .toggle-button--tuli .toggle-button__icon:before, .toggle-button--tuli .toggle-button__icon:after {
+      border-radius: 50%; }
+    .toggle-button--tuli .toggle-button__icon:before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.15); }
+    .toggle-button--tuli .toggle-button__icon:after {
+      top: 4px;
+      left: 4px;
+      width: 60%;
+      height: 60%;
+      background: #61B136;
+      animation: slideRight .2s ease-out;
+      transform: translate(0, 200%);
+      transition: none; }
+  .toggle-button--tuli:hover input:not(:checked) ~ .toggle-button__icon {
+    animation: hover .2s; }
+  .toggle-button--tuli:hover input:not(:checked) ~ label:before {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+@keyframes slideRight {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-200%, 0); } }
+
+@keyframes slideLeft {
+  0% {
+    transform: translate(200%, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes hover {
+  0% {
+    transform: scale(1); }
+  30% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
